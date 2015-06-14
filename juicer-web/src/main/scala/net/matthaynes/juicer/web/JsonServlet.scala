@@ -26,6 +26,9 @@ trait JsonServlet extends ScalatraServlet {
 
   before() {
     contentType = "application/json"
+
+    // Poor man's CORS
+    response.setHeader("Access-Control-Allow-Origin", "*");
   }
 
   notFound {
